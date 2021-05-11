@@ -4,13 +4,13 @@
     {
         string Name { get; set; }
 
-        float Efficiency { get; set; }
+        double Efficiency { get; set; }
 
         int Pmin { get; set; }
 
         int Pmax { get; set; }
 
-        float Profitability { get; }
+        double Profitability { get; }
         int PCapacity { get; }
 
         int P { get; set; }

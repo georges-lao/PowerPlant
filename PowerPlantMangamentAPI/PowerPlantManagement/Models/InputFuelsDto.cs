@@ -1,13 +1,24 @@
-﻿namespace PowerPlantManagement.Models
+﻿using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
+
+namespace PowerPlantManagement.Models
 {
     public struct InputFuelsDto
     {
-        public float GazEuroMwh { get; set; }
+        [Required]
+        [JsonProperty("gas(euro/MWh)")]
+        public double gazEeuroMWh { get; set; }
 
-        public float KerosineEuroMwh { get; set; }
+        [Required]
+        [JsonProperty("kerosine(euro/MWh)")]
+        public double KerosineEuroMwh { get; set; }
 
-        public float Co2EuroTon { get; set; }
+        [Required]
+        [JsonProperty("co2(euro/ton)")]
+        public double Co2EuroTon { get; set; }
 
-        public float WindIndex { get; set; }
+        [Required]
+        [JsonProperty("wind(%)")]
+        public int WindIndex { get; set; }
     }
 }

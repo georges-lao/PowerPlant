@@ -3,7 +3,6 @@ C:\Users\alexandre\Documents\GitHub\PowerPlant\PowerPlant\PowerPlantMangamentAPI
 C:\Users\alexandre\Documents\GitHub\PowerPlant\PowerPlant\PowerPlantMangamentAPI\PowerPlantManagement\bin\Debug\netcoreapp2.1\PowerPlantManagement.runtimeconfig.dev.json
 C:\Users\alexandre\Documents\GitHub\PowerPlant\PowerPlant\PowerPlantMangamentAPI\PowerPlantManagement\bin\Debug\netcoreapp2.1\PowerPlantManagement.dll
 C:\Users\alexandre\Documents\GitHub\PowerPlant\PowerPlant\PowerPlantMangamentAPI\PowerPlantManagement\bin\Debug\netcoreapp2.1\PowerPlantManagement.pdb
-C:\Users\alexandre\Documents\GitHub\PowerPlant\PowerPlant\PowerPlantMangamentAPI\PowerPlantManagement\obj\Debug\netcoreapp2.1\PowerPlantManagement.csprojAssemblyReference.cache
 C:\Users\alexandre\Documents\GitHub\PowerPlant\PowerPlant\PowerPlantMangamentAPI\PowerPlantManagement\obj\Debug\netcoreapp2.1\PowerPlantManagement.AssemblyInfoInputs.cache
 C:\Users\alexandre\Documents\GitHub\PowerPlant\PowerPlant\PowerPlantMangamentAPI\PowerPlantManagement\obj\Debug\netcoreapp2.1\PowerPlantManagement.AssemblyInfo.cs
 C:\Users\alexandre\Documents\GitHub\PowerPlant\PowerPlant\PowerPlantMangamentAPI\PowerPlantManagement\obj\Debug\netcoreapp2.1\PowerPlantManagement.csproj.CoreCompileInputs.cache
@@ -13,3 +12,4 @@ C:\Users\alexandre\Documents\GitHub\PowerPlant\PowerPlant\PowerPlantMangamentAPI
 C:\Users\alexandre\Documents\GitHub\PowerPlant\PowerPlant\PowerPlantMangamentAPI\PowerPlantManagement\obj\Debug\netcoreapp2.1\PowerPlantManagement.dll
 C:\Users\alexandre\Documents\GitHub\PowerPlant\PowerPlant\PowerPlantMangamentAPI\PowerPlantManagement\obj\Debug\netcoreapp2.1\PowerPlantManagement.pdb
 C:\Users\alexandre\Documents\GitHub\PowerPlant\PowerPlant\PowerPlantMangamentAPI\PowerPlantManagement\obj\Debug\netcoreapp2.1\PowerPlantManagement.genruntimeconfig.cache
+C:\Users\alexandre\Documents\GitHub\PowerPlant\PowerPlant\PowerPlantMangamentAPI\PowerPlantManagement\obj\Debug\netcoreapp2.1\PowerPlantManagement.csprojAssemblyReference.cache
