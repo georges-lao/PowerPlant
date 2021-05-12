@@ -4,12 +4,12 @@ using System.Linq;
 
 namespace PowerPlantManagement.Models
 {
-    public class LoadRequest
+    public class RequestProcessor
     {
         private int _load;
         private List<IPowerPlant> _powerPlants;
 
-        public LoadRequest (InputRequestDto request)
+        public RequestProcessor (InputRequestDto request)
         {
             this._load = request.load;
             initialisePowerPlantList(request);

@@ -18,7 +18,7 @@ namespace PowerPlantLoadUnitTest
             };
             var list = new List<InputPowerPlantDto>();
             list.Add(intput);
-            var test = new LoadRequest(new InputRequestDto() { 
+            var test = new RequestProcessor(new InputRequestDto() { 
              Fuels = new InputFuelsDto() { 
                                             Co2EuroTon = 100,
                                             gazEeuroMWh = 100,

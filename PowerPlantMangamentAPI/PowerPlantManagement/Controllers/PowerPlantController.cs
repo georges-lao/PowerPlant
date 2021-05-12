@@ -43,7 +43,7 @@ namespace PowerPlantManagement.Controllers
                 //Exception and log policy to implement
                 return BadRequest();
             }
-            var result = new LoadRequest(loadRequest);
+            var result = new RequestProcessor(loadRequest);
 
             return Ok(new JsonResult(
                     result.GetLoadPlan()
