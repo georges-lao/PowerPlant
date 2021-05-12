@@ -16,6 +16,47 @@ namespace PowerPlantManagement.Models
             this._load = request.load;
             initialisePowerPlantList(request);
         }
+       
+        public List<OutputPowerPlantDto> GetLoadPlan()
+        {
+            var loaded = 0;
+            var ToLoad = 0;
+            var result = new List<OutputPowerPlantDto>();
+            var list = _powerPlants.OrderBy(x => x.Profitability).ThenByDescending(x => x.PCapacity);
+            var RequirePPNb = getRequirePowerPlantCount(list);
+            var count = 0;
+
+            foreach (var item in list)
+            {
+                if (count < RequirePPNb)
+                {
+                    item.P = item.Pmin;
+                    loaded += item.Pmin;
+                    count++;
+                }
+                else
+                    break;
+            }
+
+            foreach (var item in list)
+            {                
+                    if ((item.PCapacity - item.P) < (_load - loaded))
+                    {
+                        ToLoad = item.PCapacity - item.P;
+                        item.P += ToLoad;
+                        loaded += ToLoad;
+                    }
+                    else
+                    {
+                        ToLoad = _load - loaded;
+                        item.P += ToLoad;
+                        loaded += ToLoad;
+                    }
+                    result.Add(new OutputPowerPlantDto() { Name = item.Name, p = item.P });                                               
+            }
+
+            return result;
+        }
 
         private void initialisePowerPlantList(InputRequestDto request)
         {
@@ -32,41 +73,28 @@ namespace PowerPlantManagement.Models
                 }
                 if (item.Type.Equals("windturbine"))
                 {
-                    _powerPlants.Add(new WindturbinePowerPlant(item.Name, request.Fuels.WindIndex , item.Efficiency, item.Pmin, item.Pmax));
+                    _powerPlants.Add(new WindturbinePowerPlant(item.Name, request.Fuels.WindIndex, item.Efficiency, item.Pmin, item.Pmax));
                 }
             }
         }
 
-        public List<OutputPowerPlantDto> GetLoadPlan()
+        private int getRequirePowerPlantCount(IEnumerable<IPowerPlant> list)
         {
+            var result = 0;
             var loaded = 0;
-            var result = new List<OutputPowerPlantDto>();
-            var list = _powerPlants.OrderByDescending(y => y.PCapacity).OrderBy(x => x.Profitability);
 
             foreach (var item in list)
             {
-                if (_load > loaded)
+                if (loaded < _load)
                 {
-                    if (item.PCapacity > (_load - loaded))
-                    {
-                        result.Add(new OutputPowerPlantDto() { Name = item.Name, p = (_load - loaded) });
-                        loaded += item.PCapacity;
-                    }
-                    else
-                    {
-                        result.Add(new OutputPowerPlantDto() { Name = item.Name, p = item.PCapacity });
-                        loaded += item.PCapacity;
-                    }
-                    
+                    result++;
+                    loaded += item.PCapacity;
                 }
                 else
                 {
-                    result.Add(new OutputPowerPlantDto() { Name = item.Name, p = 0 });
+                    break;
                 }
-
-                
             }
-
             return result;
         }
     }
